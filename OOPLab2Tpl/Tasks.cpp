@@ -12,10 +12,24 @@ void MenuTask()
     cout << "    5.  Examples of problems using bitwise operations \n";
     cout << "    6.  Exit \n";
 }
-void task1() {
-    // Обчислення виразів з використанням побітових операцій
-    // Calculation of expressions using bitwise operations 
-    cout << " Calculation of expressions using bitwise operations  \n";
+
+
+
+int task1() {
+  // Обчислення виразів з використанням побітових операцій
+//Замітки до першого завдання:
+//34 * b + (d * 15 + 12 * a) / 1024) - 8365 * c + d * 14
+//2^1 * b + 2^5 * b + ((d * 2^4 - d + a * 2^3 + 2^2)/10) - (c * 2^13 + c * 2^7 + c * 2^5 + c * 2^3 + c * 2^2 + c) + (d * 2^3 + d * 2^2 + d * 2^1)
+//(b<<1) + (b << 5) + (((d << 4) - d + (a << 3) + (a<<2))>>10) - ((c<<13) + (c<<7) + (c<<5) + (c<<3) + (c<<2) + c) + ((d << 3) + (d<<2) + (d<<1))
+  int a, b, c, d;
+  double x, y;
+  cout << "Enter a, b, c, d:";
+  cin >> a >> b >> c >> d;
+  x = (b<<1) + (b << 5) + (((d << 4) - d + (a << 3) + (a<<2))>>10) - ((c<<13) + (c<<7) + (c<<5) + (c<<3) + (c<<2) + c) + ((d << 3) + (d<<2) + (d<<1));
+  y = 34 * b + ((d * 15 + 12 * a) / 1024) - 8365 * c + d * 14;
+  cout << "Result with bit operation:" << x << endl;
+  cout << "Result:" << y << endl;
+  return 0;
 }
 
 void task2()
